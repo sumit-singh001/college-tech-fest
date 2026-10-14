@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova | Tech Fest 2026</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080d1a;
+            color: #ffffff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #0d1426;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #00e5ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at top, #123b65, transparent 60%),
+                #080d1a;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 76px);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00e5ff;
+        }
+
+        .hero p {
+            color: #b7c4d8;
+            font-size: 18px;
+            max-width: 650px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00e5ff;
+            color: #080d1a;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #aab6ca;
+            margin-bottom: 45px;
+        }
+
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .event-card {
+            background: #111b30;
+            padding: 28px;
+            border: 1px solid #24344e;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .event-icon {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .event-card h3 {
+            margin-bottom: 12px;
+            color: #00e5ff;
+        }
+
+        .event-card p {
+            color: #b7c4d8;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .event-card small {
+            color: #ffffff;
+        }
+
+        .schedule {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .schedule-item {
+            display: flex;
+            gap: 25px;
+            padding: 22px;
+            margin-bottom: 15px;
+            background: #111b30;
+            border-left: 4px solid #00e5ff;
+            border-radius: 8px;
+        }
+
+        .schedule-item .time {
+            min-width: 100px;
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+        .schedule-item p {
+            color: #b7c4d8;
+            margin-top: 8px;
+        }
+
+        .register {
+            background: #0d1426;
+        }
+
+        .registration-form {
+            max-width: 600px;
+            margin: auto;
+            display: grid;
+            gap: 18px;
+        }
+
+        .registration-form input,
+        .registration-form select {
+            width: 100%;
+            padding: 15px;
+            background: #111b30;
+            border: 1px solid #34445f;
+            color: white;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .registration-form input:focus,
+        .registration-form select:focus {
+            border-color: #00e5ff;
+        }
+
+        .registration-form select option {
+            background: #111b30;
+        }
+
+        #message {
+            text-align: center;
+            color: #00e5ff;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #080d1a;
+            color: #9eabc0;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">TechNova.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#register">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Welcome to <span>TechNova 2026</span></h1>
+
+            <p>
+                Innovate. Collaborate. Create.
+                Join the ultimate technology festival featuring coding battles,
+                robotics, innovation challenges, and exciting prizes.
+            </p>
+
+            <p><strong>November 20–21, 2026 | Main Campus</strong></p>
+
+            <a href="#events" class="btn">Explore Events</a>
+        </section>
+
+        <section id="events">
+            <h2 class="section-title">Our Events</h2>
+            <p class="section-subtitle">
+                Discover your passion and compete with the best.
+            </p>
+
+            <div class="events">
+                <div class="event-card">
+                    <div class="event-icon">💻</div>
+                    <h3>CodeStorm</h3>
+                    <p>
+                        Solve challenging programming problems and
+                        prove your algorithmic skills.
+                    </p>
+                    <small>Duration: 3 Hours</small>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-icon">🤖</div>
+                    <h3>RoboWars</h3>
+                    <p>
+                        Design, build, and battle robots in an
+                        exciting engineering competition.
+                    </p>
+                    <small>Team Event</small>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-icon">🚀</div>
+                    <h3>Hackathon</h3>
+                    <p>
+                        Build innovative solutions to real-world
+                        problems with your team.
+                    </p>
+                    <small>Duration: 24 Hours</small>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-icon">🎮</div>
+                    <h3>Game Arena</h3>
+                    <p>
+                        Compete against other gamers and
+                        showcase your gaming skills.
+                    </p>
+                    <small>Solo and Team Events</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule">
+            <h2 class="section-title">Event Schedule</h2>
+            <p class="section-subtitle">
+                Plan your two days of innovation.
+            </p>
+
+            <div class="schedule">
+                <div class="schedule-item">
+                    <div class="time">9:00 AM</div>
+                    <div>
+                        <h3>Opening Ceremony</h3>
+                        <p>Welcome address and inauguration.</p>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="time">10:00 AM</div>
+                    <div>
+                        <h3>Coding Competition</h3>
+                        <p>Test your problem-solving skills.</p>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="time">1:00 PM</div>
+                    <div>
+                        <h3>Hackathon and Robotics</h3>
+                        <p>Innovation, teamwork, and technology.</p>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="time">4:00 PM</div>
+                    <div>
+                        <h3>Prize Distribution</h3>
+                        <p>Celebrate the winners and participants.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="register" id="register">
+            <h2 class="section-title">Register Now</h2>
+            <p class="section-subtitle">
+                Secure your place at TechNova 2026.
+            </p>
+
+            <form class="registration-form" id="registrationForm">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email Address"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="college"
+                    placeholder="College Name"
+                    required
+                >
+
+                <select id="event" required>
+                    <option value="">Select an Event</option>
+                    <option value="CodeStorm">CodeStorm</option>
+                    <option value="RoboWars">RoboWars</option>
+                    <option value="Hackathon">Hackathon</option>
+                    <option value="Game Arena">Game Arena</option>
+                </select>
+
+                <button type="submit" class="btn">
+                    Submit Registration
+                </button>
+
+                <p id="message" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 TechNova | College Tech Fest</p>
+        <p>Built for innovators, by innovators.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const college = document.getElementById("college").value.trim();
+            const selectedEvent = document.getElementById("event").value;
+
+            if (!name || !email || !college || !selectedEvent) {
+                message.textContent = "Please fill in all fields.";
+                return;
+            }
+
+            message.textContent =
+                "Thank you, " + name +
+                "! Your registration form has been submitted successfully.";
+
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
